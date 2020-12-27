@@ -2,21 +2,26 @@
 
 Using fluentd to read docker container json-file log files, filtering, and output to HEC.
 
-## Build Log Aggregator Image
+## Build image
 
-Run to build image:
 ```
-docker/build.sh tag
+make build
 ```
 
-## Run Log Aggregator Container
+## Build and push image
+
+```
+make all
+```
+
+## Run container
 
 ```
 docker run -d -v /var/lib/docker/containers:/containers ihuntenator/fluentd-hec:[tag]
 ```
 
 
-## Trouble shhot container
+## Trouble shoot container
 
 ```
 docker run -it -v /var/lib/docker/containers:/containers ihuntenator/fluentd-hec:[tag] bash
