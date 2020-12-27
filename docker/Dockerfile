@@ -9,7 +9,7 @@ ENV FLUENT_USER fluent
 
 USER root
 
-COPY fluent.conf ./
+COPY fluentd.conf ./
 
 RUN wget -O jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 && \
       chmod +x ./jq && \
@@ -23,7 +23,7 @@ RUN gem install bundler && \
    useradd -r -g $FLUENT_USER $FLUENT_USER && \
    mkdir -p /fluentd/etc /fluentd/plugins && \
    mkdir -p /var/log/fluentd && \
-   cp fluent.conf /fluentd/etc &&\
+   cp fluentd.conf /fluentd/etc &&\
    chown -R $FLUENT_USER /fluentd && chgrp -R $FLUENT_USER /fluentd && \
    chown -R $FLUENT_USER //var/log/fluentd && chgrp -R $FLUENT_USER /var/log/fluentd
 
