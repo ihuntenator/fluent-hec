@@ -7,6 +7,9 @@ LABEL name="fluentd log aggregator container for docker json-file"
 ENV VERSION=${VERSION}
 ENV FLUENT_USER fluent
 
+ENV TZ=Pacific/Auckland
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 USER root
 
 COPY fluentd.conf ./
