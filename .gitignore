@@ -1,6 +1,6 @@
 # For this repository #
 #######################
-fluentd.conf
+/docker/fluentd.conf
 
 # Compiled source #
 ###################
