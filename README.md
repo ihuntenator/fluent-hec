@@ -14,15 +14,18 @@ make build
 make all
 ```
 
-## Run container
+Test with fluentd-lab
+
+
+## Run container manual
 
 ```
-docker run -d -v /var/lib/docker/containers:/containers ihuntenator/fluentd-hec:[tag]
+docker run -d -v /var/lib/docker/containers:/var/lib/docker/containers:Z ihuntenator/fluentd-hec:[tag]
 ```
 
 
 ## Trouble shoot container
 
 ```
-docker run -it -v /var/lib/docker/containers:/containers ihuntenator/fluentd-hec:[tag] bash
+docker run -it -v /var/lib/docker/containers:/var/lib/docker/containers:Z ihuntenator/fluentd-hec:[tag] bash
 ```
