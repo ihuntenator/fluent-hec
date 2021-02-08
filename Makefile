@@ -15,3 +15,4 @@ push:
 	@docker push ${IMAGEFULLNAME}
 
 all: build push
+
