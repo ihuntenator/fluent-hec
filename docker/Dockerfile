@@ -26,5 +26,5 @@ RUN groupadd -r $FLUENT_USER && \
    chown -R $FLUENT_USER:$FLUENT_USER /var/log/fluentd &&\
    ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-USER $FLUENT_USER
+#USER $FLUENT_USER
 CMD fluentd -c /fluentd/etc/fluentd.conf 
