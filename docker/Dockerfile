@@ -24,8 +24,8 @@ RUN gem install bundler && \
    mkdir -p /fluentd/etc /fluentd/plugins && \
    mkdir -p /var/log/fluentd && \
    cp fluentd.conf /fluentd/etc &&\
-   chown -R $FLUENT_USER /fluentd && chgrp -R $FLUENT_USER /fluentd && \
-   chown -R $FLUENT_USER //var/log/fluentd && chgrp -R $FLUENT_USER /var/log/fluentd
+   chown -R $FLUENT_USER:$FLUENT_USER /fluentd && \
+   chown -R $FLUENT_USER:$FLUENT_USER /var/log/fluentd &&
 
-#USER $FLUENT_USER
+USER $FLUENT_USER
 CMD fluentd -c /fluentd/etc/fluentd.conf 
