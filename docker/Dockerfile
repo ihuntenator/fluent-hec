@@ -17,6 +17,7 @@ RUN wget -O jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux6
       cp jq /usr/bin
 
 COPY Gemfile* ./
+
 RUN gem install bundler && \
     bundle install 
 
@@ -30,4 +31,4 @@ RUN groupadd -r $FLUENT_USER && \
    ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 #USER $FLUENT_USER
-CMD fluentd -c /fluentd/etc/fluentd.conf 
+CMD ["fluentd", "-c", "/fluentd/etc/fluentd.conf"]

@@ -1,6 +1,6 @@
 # fluentd-hec
 
-Using fluentd to read docker container json-file log files, filtering, and output to HEC.
+fluentd with HEC gem to enable output to Splunk.
 
 ## Build image
 
@@ -35,3 +35,10 @@ Check the output in the first terminal window, should see something like:
 ```
 docker run -it -v /var/lib/docker/containers:/var/lib/docker/containers:Z ihuntenator/fluentd-hec:[tag] bash
 ```
+
+
+## To Use
+
+Use this container image in a docker-compose service with bind mount of the fluentd.conf file.
+
+https://github.com/ihuntenator/fluentd-lab
